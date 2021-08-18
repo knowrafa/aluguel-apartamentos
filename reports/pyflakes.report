@@ -1,0 +1,65 @@
+venv/lib/python3.8/site-packages/django/contrib/messages/__init__.py:1:1 'from django.contrib.messages.api import *' used; unable to detect undefined names
+venv/lib/python3.8/site-packages/django/contrib/messages/__init__.py:1:1 'django.contrib.messages.api.*' imported but unused
+venv/lib/python3.8/site-packages/django/contrib/messages/__init__.py:2:1 'from django.contrib.messages.constants import *' used; unable to detect undefined names
+venv/lib/python3.8/site-packages/django/contrib/messages/__init__.py:2:1 'django.contrib.messages.constants.*' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/apps.py:10:9 '.checks.pagination_system_check' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.DictField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.MultipleChoiceField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.NullBooleanField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.RegexField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.SerializerMethodField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:58:1 'rest_framework.relations.ManyRelatedField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:58:1 'rest_framework.relations.RelatedField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:58:1 'rest_framework.relations.StringRelatedField' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:64:1 'rest_framework.fields.CurrentUserDefault' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/serializers.py:67:1 'rest_framework.relations.Hyperlink' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/schemas/__init__.py:26:1 '.coreapi.AutoSchema' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/schemas/__init__.py:26:1 '.coreapi.ManualSchema' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/schemas/__init__.py:26:1 '.coreapi.SchemaGenerator' imported but unused
+venv/lib/python3.8/site-packages/rest_framework/schemas/__init__.py:27:1 '.inspectors.DefaultSchema' imported but unused
+venv/lib/python3.8/site-packages/rest_framework_nested/serializers.py:61:16 '...' % ... has unused named argument(s): [E] PYFLAKES:app_label
+venv/lib/python3.8/site-packages/django_filters/__init__.py:4:1 'from .filters import *' used; unable to detect undefined names
+venv/lib/python3.8/site-packages/django_filters/__init__.py:4:1 '.filters.*' imported but unused
+venv/lib/python3.8/site-packages/django_filters/__init__.py:5:1 '.filterset.FilterSet' imported but unused
+venv/lib/python3.8/site-packages/django_filters/__init__.py:10:5 '.rest_framework' imported but unused
+venv/lib/python3.8/site-packages/django_filters/rest_framework/filters.py:3:1 'from ..filters import *' used; unable to detect undefined names
+venv/lib/python3.8/site-packages/django_filters/rest_framework/filters.py:3:1 '..filters.*' imported but unused
+venv/lib/python3.8/site-packages/django_filters/rest_framework/__init__.py:2:1 '.backends.DjangoFilterBackend' imported but unused
+venv/lib/python3.8/site-packages/django_filters/rest_framework/__init__.py:3:1 'from .filters import *' used; unable to detect undefined names
+venv/lib/python3.8/site-packages/django_filters/rest_framework/__init__.py:3:1 '.filters.*' imported but unused
+venv/lib/python3.8/site-packages/django_filters/rest_framework/__init__.py:4:1 '.filterset.FilterSet' imported but unused
+venv/lib/python3.8/site-packages/user_agents/parsers.py:150:16 undefined name 'unicode'
+venv/lib/python3.8/site-packages/user_agents/compat.py:11:20 undefined name 'basestring'
+venv/lib/python3.8/site-packages/user_agents/__init__.py:3:1 '.parsers.parse' imported but unused
+venv/lib/python3.8/site-packages/auditlog/registry.py:5:1 'six.iteritems' imported but unused
+venv/lib/python3.8/site-packages/auditlog/compat.py:1:1 'django' imported but unused
+venv/lib/python3.8/site-packages/auditlog/receivers.py:18:9 local variable 'log_entry' is assigned to but never used
+venv/lib/python3.8/site-packages/auditlog/receivers.py:43:17 local variable 'log_entry' is assigned to but never used
+venv/lib/python3.8/site-packages/auditlog/receivers.py:59:9 local variable 'log_entry' is assigned to but never used
+venv/lib/python3.8/site-packages/auditlog/migrations/0004_logentry_detailed_object_repr.py:4:1 'django.db.models' imported but unused
+venv/lib/python3.8/site-packages/auditlog/migrations/0005_logentry_additional_data_verbose_name.py:4:1 'django.db.models' imported but unused
+authentication/urls.py:1:1 'django.urls.path' imported but unused
+authentication/urls.py:1:1 'django.urls.include' imported but unused
+authentication/views.py:1:1 'django.shortcuts.render' imported but unused
+authentication/choices/__init__.py:1:1 '.permission.PermissionChoices' imported but unused
+authentication/models/__init__.py:1:1 '.permission.Permission' imported but unused
+authentication/models/__init__.py:2:1 '.user.User' imported but unused
+authentication/models/user.py:9:1 'base64' imported but unused
+apartamentos/tests.py:1:1 'django.test.TestCase' imported but unused
+apartamentos/admin.py:4:1 'apartamentos.models.Treino' imported but unused
+apartamentos/serializers/__init__.py:1:1 '.apartamento.ApartamentoSerializer' imported but unused
+apartamentos/views/__init__.py:1:1 '.apartamento.ApartamentoViewSet' imported but unused
+apartamentos/views/__init__.py:1:1 '.apartamento.ApartamentoTemplateView' imported but unused
+apartamentos/views/__init__.py:1:1 '.apartamento.ApartamentoCreateView' imported but unused
+apartamentos/views/apartamento.py:1:1 'django.shortcuts.render' imported but unused
+apartamentos/views/apartamento.py:2:1 'rest_framework.mixins' imported but unused
+apartamentos/views/apartamento.py:2:1 'rest_framework.generics' imported but unused
+apartamentos/models/__init__.py:1:1 '.apartamento.ApartamentoModel' imported but unused
+apartamentos/models/__init__.py:1:1 '.apartamento.ApartamentoUsuarioModel' imported but unused
+apartamentos/models/__init__.py:2:1 '.treino.Treino' imported but unused
+apartamentos/models/__init__.py:2:1 '.treino.Musculacao' imported but unused
+apartamentos/models/__init__.py:2:1 '.treino.Aerobico' imported but unused
+management/log/tasks.py:3:1 'celery.shared_task' imported but unused
+management/log/api/v1/serializers/__init__.py:1:1 '.log.LogSerializer' imported but unused
+management/log/models/__init__.py:1:1 '.log.LogModel' imported but unused
+management/celery/views.py:1:1 'django.shortcuts.render' imported but unused
