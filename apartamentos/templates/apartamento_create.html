@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% load rest_framework %}
+
+{% block content  %}
+    <form style="width: 50%" method="post">
+    {% render_form serializer %}
+
+    <input type="submit" value="Submit">
+    </form>
+{% endblock %}
