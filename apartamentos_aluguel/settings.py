@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", None)
 DEBUG = os.environ.get("DEBUG", False) == "True"
 
 # Define you application name (same as settings directory)
-APPLICATION_NAME = os.environ.get("APPLICATION_NAME", os.getcwd().split("/")[-1])
+APPLICATION_NAME = 'apartamentos_aluguel'
 
 # Quais URLS's podem ser host da aplicação
 ALLOWED_HOSTS = ["*"]
@@ -75,7 +75,7 @@ MIDDLEWARE = [
     "auditlog.middleware.AuditlogMiddleware",
 ]
 
-ROOT_URLCONF = APPLICATION_NAME + ".urls"
+ROOT_URLCONF = "apartamentos_aluguel.urls"
 
 TEMPLATES = [
     {
@@ -93,7 +93,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = APPLICATION_NAME + ".wsgi.application"
+WSGI_APPLICATION = "apartamentos_aluguel.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
