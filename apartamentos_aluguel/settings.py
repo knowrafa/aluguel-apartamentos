@@ -48,13 +48,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # libs
+    "django_jenkins",
     "corsheaders",
     "rest_framework",
     "rest_framework_nested",
     "django_filters",
     "user_agents",
     "auditlog",
-    "django_jenkins",
     # celery apps
     "authentication",
     "apartamentos",
