@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", None)
 DEBUG = os.environ.get("DEBUG", False) == "True"
 
 # Define you application name (same as settings directory)
-APPLICATION_NAME = 'apartamentos_aluguel'
+APPLICATION_NAME = "apartamentos_aluguel"
 
 # Quais URLS's podem ser host da aplicação
 ALLOWED_HOSTS = ["*"]
@@ -108,10 +108,17 @@ DATABASES = {
     },
 }
 
-JENKINS_TASKS = (
-    "django_jenkins.tasks.run_pep8",
-    "django_jenkins.tasks.run_pyflakes",
-)
+PROJECT_APPS = [
+    "authentication",
+    "apartamentos",
+    "management.log",
+    "management.celery",
+]
+
+# JENKINS_TASKS = (
+#     "django_jenkins.tasks.run_pep8",
+#     "django_jenkins.tasks.run_pyflakes",
+# )
 
 CACHES = {
     "default": {
