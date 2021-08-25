@@ -7,7 +7,7 @@
 */
 
 :root{
-  --main-color: #6ab4f5;
+  --main-color: #0542af;
 }
 
 html, body, div, span, applet, object,
@@ -1871,7 +1871,7 @@ button,
     margin: 0 auto;
     max-width: 110em; }
     #main > .inner > section {
-      padding: 6em 0 4em 0 ;
+      padding: 4em 0 4em 0 ;
       border-top: solid 2px rgba(210, 215, 217, 0.75); }
       #main > .inner > section:first-of-type {
         border-top: 0 !important; }
@@ -1879,7 +1879,7 @@ button,
     #main > .inner {
       padding: 0 5em 0.1em 5em ; }
       #main > .inner > section {
-        padding: 5em 0 3em 0 ; } }
+        padding: 2em 0 3em 0 ; } }
   @media screen and (max-width: 1280px) {
     #main > .inner {
       padding: 0 4em 0.1em 4em ; }

@@ -13,12 +13,6 @@ class ApartamentoUsuarioSerializer(serializers.ModelSerializer):
 
 
 class ApartamentoSerializer(serializers.ModelSerializer):
-    cuidadores = serializers.ListField(
-        child=serializers.UUIDField(),
-        allow_empty=True,
-        required=False,
-        write_only=True,
-    )
 
     class Meta:
         model = ApartamentoModel
@@ -39,19 +33,8 @@ class ApartamentoSerializer(serializers.ModelSerializer):
             "elevador",
             "link",
             "contato",
-            "cuidadores",
         )
 
     def create(self, validated_data):
         return super(ApartamentoSerializer, self).create(validated_data)
 
-    def to_representation(self, instance):
-        obj = super(ApartamentoSerializer, self).to_representation(instance)
-        obj["cuidadores"] = [
-            ApartamentoUsuarioSerializer(
-                ApartamentoUsuarioModel.objects.get(apartamento=instance, usuarios=pessoa),
-                context=self.context,
-            ).data
-            for pessoa in instance.pessoas.all()
-        ]
-        return obj
