@@ -22,8 +22,11 @@ router = routers.DefaultRouter()
 
 router.register("apartamentos", views.ApartamentoViewSet, basename="apartamentos")
 
+app_name = "apartamentos"
+
 urlpatterns = [
-    path("", include(router.urls)),
-    path("listar_apartamentos/", views.ApartamentoTemplateView.as_view()),
-    path("list_create_apartamento/", views.ApartamentoCreateView.as_view()),
+    path("api/", include(router.urls)),
+    path("apartamentos/", views.ApartamentoTemplateView.as_view(), name='apartamentos'),
+    path("apartamentos/list/", views.ApartamentoTemplateView.as_view(), name='listar-apartamentos'),
+    path("apartamento/create/", views.ApartamentoCreateView.as_view(), name='criar-apartamento'),
 ]

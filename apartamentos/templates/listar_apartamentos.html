@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    {% for header in table_headers %}
+                    <th id="table-header" style="text-align: center">{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for apartamento in apartamentos %}
+                <tr style="text-align: center">
+                    <td>{{ apartamento.setor}}</td>
+                    <td>R$ {{ apartamento.valor}}</td>
+                    <td>
+                      {% if apartamento.elevador %}
+                        <em class="fas fa-check-square" style="color: green"></em>
+                        {% else %}
+                        <em class="fas fa-window-close" style="color: red"></em>
+                    {% endif %}
+                    </td>
+                    <td>
+                    {% if apartamento.vaga %}
+                        <em class="fas fa-check-square" style="color: green"></em>
+                        {% else %}
+                        <em class="fas fa-times-circle" style="color: red"></em>
+                    {% endif %}
+                    </td>
+                    <td>R$ {{ apartamento.condominio}}</td>
+
+                    <td>{{ apartamento.contato}}</td>
+                    <td style="text-align: center">
+                            <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="{{ apartamento.link}}" style="border-bottom: none;">
+
+                                <em class="fas fa-external-link-alt"></em>
+                            </a>
+
+                        </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+{% endblock %}

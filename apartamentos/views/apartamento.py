@@ -22,7 +22,7 @@ class ApartamentoCreateView(views.APIView):
 
 class ApartamentoTemplateView(views.APIView):
     renderer_classes = [renderers.TemplateHTMLRenderer]
-    template_name = "index.html"
+    template_name = "listar_apartamentos.html"
     authentication_classes = []
     permission_classes = []
 

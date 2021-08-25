@@ -38,65 +38,6 @@
 								</header>
 
 							<!-- Banner -->
-								<section>
-                                            <div class="table-wrapper">
-														<table>
-															<thead>
-																<tr>
-                                                                    {% for header in table_headers %}
-																	<th style="text-align: center">{{ header }}</th>
-                                                                    {% endfor %}
-																</tr>
-															</thead>
-															<tbody>
-                                                            {% for apartamento in apartamentos %}
-																<tr style="text-align: center">
-																	<td>{{ apartamento.setor}}</td>
-																	<td>R$ {{ apartamento.valor}}</td>
-																	<td>
-                                                                      {% if apartamento.elevador %}
-                                                                        <span class="material-icons" style="color: green">
-                                                                            check_circle
-                                                                        </span>
-                                                                        {% else %}
-                                                                        <span class="material-icons" style="color: red">
-                                                                            cancel
-                                                                        </span>
-                                                                    {% endif %}
-                                                                    </td>
-																	<td>
-                                                                    {% if apartamento.vaga %}
-                                                                        <span class="material-icons" style="color: green">
-                                                                            check_circle
-                                                                        </span>
-                                                                        {% else %}
-                                                                        <span class="material-icons" style="color: red">
-                                                                            cancel
-                                                                        </span>
-                                                                    {% endif %}
-                                                                    </td>
-																	<td>R$ {{ apartamento.condominio}}</td>
-
-																	<td>{{ apartamento.contato}}</td>
-																	<td style="text-align: center">
-                                                                            <a class="btn btn-primary" href="{{ apartamento.link}}" style="border-bottom: none;">
-
-                                                                                <span class="material-icons">
-
-                                                                                    insert_link
-
-                                                                                </span>
-                                                                            </a>
-
-                                                                        </td>
-
-																</tr>
-                                                            {% endfor %}
-															</tbody>
-
-														</table>
-													</div>
-								</section>
                                 <section>
                                     {% block content %}
                                     {% endblock %}
@@ -109,20 +50,23 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+{#							<!-- Search -->#}
+{#								<section id="search" class="alt">#}
+{#									<form method="post" action="#">#}
+{#										<input type="text" name="query" id="query" placeholder="Search" />#}
+{#									</form>#}
+{#								</section>#}
 
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
-										<h2>Menu</h2>
+										<h2><a href="{% url "apartamentos:apartamentos" %}">Menu</a></h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
+										<li><a href="{% url "apartamentos:listar-apartamentos" %}">Listar Apartamentos</a></li>
+
+
+										<li><a href="{% url "apartamentos:criar-apartamento" %}">Criar Apartamento</a></li>
 										<li>
 											<span class="opener">Submenu</span>
 											<ul>
@@ -133,17 +77,10 @@
 											</ul>
 										</li>
 
-										<li><a href="generic.html">Generic</a></li>
-
 
 									</ul>
 								</nav>
 
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
 
 						</div>
 					</div>
