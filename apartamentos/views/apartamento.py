@@ -91,9 +91,6 @@ class ApartamentoTemplateView(ApartamentoView):
         }
         return Response(data=payload)
 
-    def post(self, request):
-        return Response()
-
 
 class ApartamentoViewSet(
     viewsets.ModelViewSet,

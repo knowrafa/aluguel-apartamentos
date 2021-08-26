@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import datetime
 from os.path import normpath, join
+import django_heroku
+import whitenoise
+import dj_database_url
 from pathlib import Path
 
 import dotenv
@@ -64,6 +67,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -74,6 +78,12 @@ MIDDLEWARE = [
     "management.middleware.log.LogMiddleware",
     "auditlog.middleware.AuditlogMiddleware",
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+django_heroku.settings(locals())
+
+DATABASES = {"default": dj_database_url.config()}
 
 ROOT_URLCONF = "apartamentos_aluguel.urls"
 
@@ -98,15 +108,18 @@ WSGI_APPLICATION = "apartamentos_aluguel.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DATABASE_NAME"),
-        "HOST": os.environ.get("DATABASE_HOST"),
-        "USER": os.environ.get("DATABASE_USER"),
-        "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
-    },
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": os.environ.get("DATABASE_NAME"),
+#         "HOST": os.environ.get("DATABASE_HOST"),
+#         "USER": os.environ.get("DATABASE_USER"),
+#         "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
+#     },
+# }
+
+DATABASES = {"default": dj_database_url.config()}
+
 
 PROJECT_APPS = [
     "authentication",
