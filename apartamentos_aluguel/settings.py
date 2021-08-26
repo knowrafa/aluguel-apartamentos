@@ -245,17 +245,13 @@ USE_TZ = True
 
 
 # URL para acesso de arquivos estáticos
-STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
-# Define quais os diretórios de arquivos estáticos
-STATICFILES_DIRS = [
-    normpath(join(BASE_DIR, "static")),
-]
-
-# Define onde os arquivos serão colocados ao utilizar collectstatic
-# Para servir arquivos estáticos em produção, é preciso adicionar à URL
-#  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-STATIC_ROOT = normpath(join(BASE_DIR, "statics"))
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
