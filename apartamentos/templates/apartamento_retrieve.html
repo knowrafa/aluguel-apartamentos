@@ -1,19 +1,19 @@
 {% extends "index.html" %}
 {% load rest_framework %}
 {% block title %}
-    Criar Apartamento
+    Atualizar Apartamento
 {% endblock %}
 {% block content  %}
     <div style="display: flex; justify-content: center; width: 100%">
 
-        <form style="width: 60%" method="post" action=".">
-            <h2>Insira os dados do Apartamento</h2>
+        <form style="width: 60%" method="post" action="{% url "apartamentos:atualizar-apartamento" pk=serializer.data.id %}">
+            <h2>Atualize os dados do apartamento</h2>
             {% csrf_token %}
 
             {% render_form serializer %}
 
             <div style="display: flex; width: 100%; justify-content: flex-end; margin-top: 5px">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Atualizar">
             </div>
         </form>
     </div>

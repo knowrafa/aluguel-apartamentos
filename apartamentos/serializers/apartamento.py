@@ -13,10 +13,10 @@ class ApartamentoUsuarioSerializer(serializers.ModelSerializer):
 
 
 class ApartamentoSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = ApartamentoModel
         fields = (
+            "id",
             "setor",
             "endereco",
             "valor",

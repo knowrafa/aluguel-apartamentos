@@ -11,18 +11,21 @@
                     {% for header in table_headers %}
                     <th id="table-header" style="text-align: center">{{ header }}</th>
                     {% endfor %}
+                    <th id="table-header" style="text-align: center">Remover</th>
                 </tr>
             </thead>
             <tbody>
             {% for apartamento in apartamentos %}
                 <tr style="text-align: center">
-                    <td>{{ apartamento.setor}}</td>
+
+
+                    <td><a style="border-bottom: none;" href="{% url "apartamentos:retrieve-apartamentos" pk=apartamento.pk %}">{{ apartamento.setor}}</a></td>
                     <td>R$ {{ apartamento.valor}}</td>
                     <td>
                       {% if apartamento.elevador %}
                         <em class="fas fa-check-square" style="color: green"></em>
                         {% else %}
-                        <em class="fas fa-window-close" style="color: red"></em>
+                        <em class="fas fa-times-circle" style="color: red"></em>
                     {% endif %}
                     </td>
                     <td>
@@ -42,6 +45,17 @@
                             </a>
 
                         </td>
+                    <td>
+                        <form id="delete-{{ apartamento.id }}" style="margin-bottom: 0" method="post" action="{% url "apartamentos:deletar-apartamento" pk=apartamento.id  %}">
+                            {% csrf_token %}
+
+                            <a class="btn btn-primary" href="#" onclick="document.getElementById('delete-{{ apartamento.id }}').submit()" style="border-bottom: none;">
+
+                                <em class="fas fa-trash-alt"></em>
+                            </a>
+
+                        </form>
+                    </td>
 
                 </tr>
             {% endfor %}
