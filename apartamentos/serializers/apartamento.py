@@ -29,8 +29,8 @@ class ApartamentoSerializer(serializers.ModelSerializer):
             "area",
             "quantidade_quartos",
             "quantidade_banheiros",
-            "vaga",
             "elevador",
+            "vaga",
             "link",
             "contato",
         )

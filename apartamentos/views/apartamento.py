@@ -11,7 +11,14 @@ from apartamentos.serializers import ApartamentoSerializer
 from apartamentos.models import ApartamentoModel
 
 
-class ApartamentoDeleteView(views.APIView):
+class ApartamentoView(views.APIView):
+    renderer_classes = [renderers.TemplateHTMLRenderer]
+    permission_classes = []
+    queryset = ApartamentoModel.objects.all()
+    serializer_class = ApartamentoSerializer
+
+
+class ApartamentoDeleteView(ApartamentoView):
     permission_classes = []
     queryset = ApartamentoModel.objects.all()
 
@@ -21,12 +28,8 @@ class ApartamentoDeleteView(views.APIView):
         return redirect("apartamentos:listar-apartamentos")
 
 
-class ApartamentoRetrieveView(views.APIView):
-    renderer_classes = [renderers.TemplateHTMLRenderer]
+class ApartamentoRetrieveView(ApartamentoView):
     template_name = "apartamento_retrieve.html"
-    permission_classes = []
-    queryset = ApartamentoModel.objects.all()
-    serializer_class = ApartamentoSerializer
 
     def get(self, request, *args, **kwargs):
         obj = self.queryset.get(pk=kwargs.get("pk"))
@@ -38,11 +41,7 @@ class ApartamentoRetrieveView(views.APIView):
         )
 
 
-class ApartamentoUpdateView(views.APIView):
-    permission_classes = []
-    queryset = ApartamentoModel.objects.all()
-    serializer_class = ApartamentoSerializer
-
+class ApartamentoUpdateView(ApartamentoView):
     def post(self, request, *args, **kwargs):
         obj = self.queryset.get(pk=kwargs.get("pk"))
         apartamento_serializer = self.serializer_class(instance=obj, data=request.data)
@@ -52,10 +51,8 @@ class ApartamentoUpdateView(views.APIView):
         return Response({"serializer": apartamento_serializer})
 
 
-class ApartamentoCreateView(views.APIView):
-    renderer_classes = [renderers.TemplateHTMLRenderer]
+class ApartamentoCreateView(ApartamentoView):
     template_name = "apartamento_create.html"
-    permission_classes = []
 
     def get(self, request, *args, **kwargs):
         ap_serializer = ApartamentoSerializer()
@@ -76,11 +73,8 @@ class ApartamentoCreateView(views.APIView):
         )
 
 
-class ApartamentoTemplateView(views.APIView):
-    renderer_classes = [renderers.TemplateHTMLRenderer]
+class ApartamentoTemplateView(ApartamentoView):
     template_name = "listar_apartamentos.html"
-    # authentication_classes = []
-    permission_classes = []
 
     def get(self, request):
         payload = {
