@@ -3,7 +3,30 @@
     Listar Apartamentos
 {% endblock %}
 
+
 {% block content %}
+    <!-- Modal content -->
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+
+  </form>
+</div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="container">
+              <h1>Deletar apartamento</h1>
+              <p>Você tem certeza que deseja deletar este apartamento?</p>
+
+              <div class="clearfix">
+                <button type="button" class="cancelbtn" onclick="closeModal('myModal')">Cancelar</button>
+                <button type="button" class="deletebtn" onclick="submitDeleteForm()">Deletar</button>
+              </div>
+            </div>
+
+        </div>
+    </div>
     <div class="table-wrapper">
         <table>
             <thead>
@@ -49,10 +72,11 @@
                         <form id="delete-{{ apartamento.id }}" style="margin-bottom: 0" method="post" action="{% url "apartamentos:deletar-apartamento" pk=apartamento.id  %}">
                             {% csrf_token %}
 
-                            <a class="btn btn-primary" href="#" onclick="document.getElementById('delete-{{ apartamento.id }}').submit()" style="border-bottom: none;">
+                            <a class="btn btn-primary" href="#" onclick="showModal('delete-{{ apartamento.id }}')" style="border-bottom: none; color: red">
 
                                 <em class="fas fa-trash-alt"></em>
                             </a>
+
 
                         </form>
                     </td>
@@ -63,4 +87,41 @@
 
         </table>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        let aptId
+        const showModal = (form_id) => {
+            let modal = document.getElementById("myModal");
+
+
+            // When the user clicks on <span> (x), close the modal
+
+            modal.style.display = "flex"
+            modal.style.alignItems="center"
+
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target === modal) {
+                modal.style.display = "none";
+              }
+            }
+
+            aptId = form_id;
+        }
+
+        const submitDeleteForm = () => {
+            const formulario = document.getElementById(aptId);
+            formulario.submit()
+        }
+
+        const closeModal = (modal_id) => {
+            const modal = document.getElementById(modal_id)
+            modal.style.display='none'
+        }
+
+    </script>
+
 {% endblock %}
