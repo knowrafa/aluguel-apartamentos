@@ -62,10 +62,15 @@
 										<h2><a href="{% url "apartamentos:apartamentos" %}">Menu</a></h2>
 									</header>
 									<ul>
-										<li><a href="{% url "apartamentos:listar-apartamentos" %}">Listar Apartamentos</a></li>
+                                        <li>
+											<span class="opener">Apartamento</span>
+											<ul>
+<li><a href="{% url "apartamentos:listar-apartamentos" %}">Listar Apartamentos</a></li><li><a href="{% url "apartamentos:criar-apartamento" %}">Criar Apartamento</a></li>
+
+											</ul>
+										</li>
 
 
-										<li><a href="{% url "apartamentos:criar-apartamento" %}">Criar Apartamento</a></li>
 										<li>
 											<span class="opener">Submenu</span>
 											<ul>
