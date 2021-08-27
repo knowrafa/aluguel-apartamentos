@@ -21,6 +21,7 @@
 
                     <td><a style="border-bottom: none;" href="{% url "apartamentos:retrieve-apartamentos" pk=apartamento.pk %}">{{ apartamento.setor}}</a></td>
                     <td>R$ {{ apartamento.valor}}</td>
+                    <td>R$ {{ apartamento.condominio}}</td>
                     <td>
                       {% if apartamento.elevador %}
                         <em class="fas fa-check-square" style="color: green"></em>
@@ -35,7 +36,6 @@
                         <em class="fas fa-times-circle" style="color: red"></em>
                     {% endif %}
                     </td>
-                    <td>R$ {{ apartamento.condominio}}</td>
 
                     <td>{{ apartamento.contato}}</td>
                     <td style="text-align: center">

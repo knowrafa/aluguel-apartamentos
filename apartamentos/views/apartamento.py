@@ -81,9 +81,9 @@ class ApartamentoTemplateView(ApartamentoView):
             "table_headers": [
                 "Setor",
                 "Valor",
+                "Condomínio",
                 "Elevador",
                 "Vaga",
-                "Condomínio",
                 "Contato",
                 "Link",
             ],
