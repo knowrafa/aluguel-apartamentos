@@ -62,6 +62,7 @@ class ApartamentoCreateView(ApartamentoView):
         apartamento_serializer = ApartamentoSerializer(data=request.data)
         if apartamento_serializer.is_valid():
             apartamento_serializer.save()
+            return redirect("apartamentos:listar-apartamentos")
 
         return Response(
             data={

@@ -27,19 +27,18 @@ app_name = "apartamentos"
 
 urlpatterns = [
     path("api/", include(router.urls)),
-    path("apartamentos/", views.ApartamentoTemplateView.as_view(), name="apartamentos"),
     path(
         "apartamentos/create/",
         views.ApartamentoCreateView.as_view(),
         name="criar-apartamento",
     ),
     path(
-        "apartamentos/list/",
+        "apartamentos/",
         views.ApartamentoTemplateView.as_view(),
         name="listar-apartamentos",
     ),
     path(
-        "apartamentos/retrieve/<uuid:pk>/",
+        "apartamentos/<uuid:pk>/",
         views.ApartamentoRetrieveView.as_view(),
         name="retrieve-apartamentos",
     ),
@@ -54,4 +53,3 @@ urlpatterns = [
         name="atualizar-apartamento",
     ),
 ]
-# re_path(r'^teste/'
