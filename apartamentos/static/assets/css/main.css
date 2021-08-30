@@ -2361,8 +2361,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Float cancel and delete buttons and add an equal width */
 .cancelbtn, .deletebtn {
-  float: left;
-  width: 50%;
+  width: 45%;
 }
 
 /* Add a color to the cancel button */
@@ -2437,15 +2436,15 @@ hr {
   cursor: pointer;
 }
 
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+.clearfix{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
+
 /* Change styles for cancel button and delete button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 720px) {
   .cancelbtn, .deletebtn {
     width: 100%;
   }

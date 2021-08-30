@@ -62,10 +62,20 @@
 
                     <td>{{ apartamento.contato}}</td>
                     <td style="text-align: center">
-                            <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="{{ apartamento.link}}" style="border-bottom: none;">
+                            {% if apartamento.link %}
+                            <a class="btn btn-primary"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               href="{% if apartamento.link %}{{ apartamento.link}} {% else %}#{% endif %}"
+                               style="border-bottom: none;">
 
                                 <em class="fas fa-external-link-alt"></em>
                             </a>
+                            {% else %}
+
+                                <em class="fas fa-unlink"></em>
+
+                            {% endif %}
 
                         </td>
                     <td>
