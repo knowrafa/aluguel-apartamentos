@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.urls import path, re_path, include
 from rest_framework_nested import routers
+from django.views.generic.base import RedirectView
+from django.urls import reverse_lazy
 
 from apartamentos import views
 
@@ -25,7 +27,12 @@ router.register("apartamentos", views.ApartamentoViewSet, basename="apartamentos
 
 app_name = "apartamentos"
 
+
+# Apartamento Urls
 urlpatterns = [
+    path(
+        "", RedirectView.as_view(url=reverse_lazy("apartamentos:listar-apartamentos"))
+    ),
     path("api/", include(router.urls)),
     path(
         "apartamentos/create/",
