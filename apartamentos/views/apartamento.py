@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from rest_framework import viewsets, mixins, views, renderers, generics
-
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 from rest_framework.response import Response
@@ -96,6 +96,7 @@ class ApartamentoTemplateView(ApartamentoView):
 class ApartamentoViewSet(
     viewsets.ModelViewSet,
 ):
+    permission_classes = [IsAuthenticated, ]
     queryset = ApartamentoModel.objects.all()
     serializer_class = ApartamentoSerializer
     filter_class = ApartamentoFilter

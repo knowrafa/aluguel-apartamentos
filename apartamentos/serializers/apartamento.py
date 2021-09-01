@@ -35,6 +35,4 @@ class ApartamentoSerializer(serializers.ModelSerializer):
             "contato",
         )
 
-    def create(self, validated_data):
-        return super(ApartamentoSerializer, self).create(validated_data)
 

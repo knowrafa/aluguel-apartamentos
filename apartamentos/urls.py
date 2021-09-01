@@ -17,7 +17,7 @@ from django.urls import path, re_path, include
 from rest_framework_nested import routers
 from django.views.generic.base import RedirectView
 from django.urls import reverse_lazy
-
+from rest_framework_jwt.views import obtain_jwt_token
 from apartamentos import views
 
 router = routers.DefaultRouter()
@@ -34,6 +34,8 @@ urlpatterns = [
         "", RedirectView.as_view(url=reverse_lazy("apartamentos:listar-apartamentos"))
     ),
     path("api/", include(router.urls)),
+
+    path("api/login/", obtain_jwt_token),
     path(
         "apartamentos/create/",
         views.ApartamentoCreateView.as_view(),
