@@ -16,7 +16,7 @@ class ApartamentoModel(SetUpModel):
     nota = models.FloatField(
         null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(10)]
     )
-    incluso = models.TextField(null=True, blank=True)
+    # incluso = models.TextField(null=True, blank=True)
 
     condominio = models.PositiveIntegerField(null=True, blank=True)
     iptu = models.PositiveIntegerField(null=True, blank=True)
@@ -27,7 +27,7 @@ class ApartamentoModel(SetUpModel):
         help_text=_("Área em m²"),
     )
     quantidade_quartos = models.PositiveIntegerField(null=True, blank=True)
-    quantidade_banheiros = models.PositiveIntegerField(null=True, blank=True)
+    # quantidade_banheiros = models.PositiveIntegerField(null=True, blank=True)
     vaga = models.BooleanField(default=False)
     elevador = models.BooleanField(default=False)
     link = models.URLField(null=True, blank=True)
