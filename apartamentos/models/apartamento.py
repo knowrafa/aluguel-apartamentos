@@ -16,7 +16,7 @@ class ApartamentoModel(SetUpModel):
     nota = models.FloatField(
         null=True, blank=True, validators=[MinValueValidator(0), MaxValueValidator(10)]
     )
-    # incluso = models.TextField(null=True, blank=True)
+    incluso = models.TextField(null=True, blank=True)
 
     condominio = models.PositiveIntegerField(null=True, blank=True)
     iptu = models.PositiveIntegerField(null=True, blank=True)
