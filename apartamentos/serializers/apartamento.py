@@ -22,7 +22,7 @@ class ApartamentoSerializer(serializers.ModelSerializer):
             "valor",
             "descricao",
             "nota",
-            # "incluso",
+            "incluso",
             "condominio",
             "iptu",
             "andar",
